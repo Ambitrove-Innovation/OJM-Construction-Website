@@ -1,4 +1,30 @@
-import { Phone, Mail, Clock, ArrowUpRight } from 'lucide-react';
+import { Phone, Mail, Clock, ArrowUpRight, Facebook, Instagram } from 'lucide-react';
+
+function TikTokIcon({ className }: { className?: string }) {
+  return (
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+      <path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5" />
+    </svg>
+  );
+}
+
+const socialLinks = [
+  {
+    name: 'Facebook',
+    href: 'https://www.facebook.com/share/1EFza9TTsJ/',
+    icon: Facebook,
+  },
+  {
+    name: 'Instagram',
+    href: 'https://www.instagram.com/olivermoyo1101instragram?igsh=MXRvYXZ3ejhmaGIzNQ==&utm_source=ig_contact_invite',
+    icon: Instagram,
+  },
+  {
+    name: 'TikTok',
+    href: 'https://www.tiktok.com/@olivermoyo11011986?_r=1&_t=ZS-95P2H5S2Z4z',
+    icon: TikTokIcon,
+  },
+];
 
 export default function Footer() {
   return (
@@ -10,24 +36,18 @@ export default function Footer() {
             Your dedicated partner for high-quality construction & plumbing. Building trust, not just structures.
           </p>
           <div className="flex gap-4">
-            <a 
-              href="https://facebook.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Follow us on Facebook"
-              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-gold hover:text-white transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold"
-            >
-              FB
-            </a>
-            <a 
-              href="https://instagram.com" 
-              target="_blank" 
-              rel="noopener noreferrer"
-              aria-label="Follow us on Instagram"
-              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-gold hover:text-white transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold"
-            >
-              IG
-            </a>
+            {socialLinks.map((social) => (
+              <a
+                key={social.name}
+                href={social.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`Follow us on ${social.name}`}
+                className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-gold hover:text-white transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold"
+              >
+                <social.icon className="w-4 h-4" />
+              </a>
+            ))}
           </div>
         </div>
 
