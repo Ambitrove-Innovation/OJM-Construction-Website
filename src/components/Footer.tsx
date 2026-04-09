@@ -1,4 +1,5 @@
 import { Phone, Mail, Clock, ArrowUpRight, Facebook, Instagram } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 function TikTokIcon({ className }: { className?: string }) {
   return (
@@ -93,6 +94,21 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-white/5 text-center text-xs text-gray-600">
         <p>© {new Date().getFullYear()} OJM Project Construction. All rights reserved.</p>
       </div>
+
+       {/* Bottom Section */}
+          <div className="border-t border-neutral-800 mt-16 pt-6 flex flex-col md:flex-row justify-between items-center text-sm text-gray-500">
+           
+            <p className="mt-3 md:mt-0">
+              Designed & Developed by{" "}
+              <Link
+                to="https://www.ambitrove.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-white font-medium">
+                Ambitrove Team
+              </Link>
+            </p>
+          </div>
     </footer>
   );
 }
