@@ -1,0 +1,78 @@
+import { Phone, Mail, Clock, ArrowUpRight } from 'lucide-react';
+
+export default function Footer() {
+  return (
+    <footer className="bg-black pt-24 pb-12 text-white relative overflow-hidden rounded-t-[3rem] mx-2 md:mx-4">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-3 gap-12 text-sm text-gray-400">
+        <div className="space-y-6">
+          <h5 className="text-white font-bold text-3xl tracking-tighter">OJM.INC</h5>
+          <p className="max-w-xs leading-relaxed">
+            Your dedicated partner for high-quality construction & plumbing. Building trust, not just structures.
+          </p>
+          <div className="flex gap-4">
+            <a 
+              href="https://facebook.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow us on Facebook"
+              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-gold hover:text-white transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold"
+            >
+              FB
+            </a>
+            <a 
+              href="https://instagram.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              aria-label="Follow us on Instagram"
+              className="w-10 h-10 rounded-full border border-white/10 flex items-center justify-center hover:bg-brand-gold hover:text-white transition-all cursor-pointer focus:outline-none focus:ring-2 focus:ring-brand-gold"
+            >
+              IG
+            </a>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <h6 className="text-white font-bold uppercase tracking-widest text-xs">Contact Information</h6>
+          <ul className="space-y-4">
+            <li className="flex items-center gap-3">
+              <Phone className="w-4 h-4 text-brand-gold" />
+              <span>Primary: 084 993 8886</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Phone className="w-4 h-4 text-brand-gold" />
+              <span>Alt: +27 619 567 714</span>
+            </li>
+            <li className="flex items-center gap-3">
+              <Mail className="w-4 h-4 text-brand-gold" />
+              <span>olivermoyo101@gmail.com</span>
+            </li>
+          </ul>
+        </div>
+
+        <div className="space-y-6">
+          <h6 className="text-white font-bold uppercase tracking-widest text-xs">Business Hours</h6>
+          <div className="flex items-start gap-3">
+            <Clock className="w-4 h-4 text-brand-gold mt-1" />
+            <div>
+              <p className="text-white font-medium">Open Daily</p>
+              <p>08:00 AM - 05:00 PM</p>
+            </div>
+          </div>
+          <div className="pt-4">
+            <button 
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+              aria-label="Scroll back to top"
+              className="flex items-center gap-2 text-white hover:text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-lg px-2 py-1"
+            >
+              Back to top <ArrowUpRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div className="max-w-7xl mx-auto px-6 md:px-12 mt-16 pt-8 border-t border-white/5 text-center text-xs text-gray-600">
+        <p>© {new Date().getFullYear()} OJM Project Construction. All rights reserved.</p>
+      </div>
+    </footer>
+  );
+}
