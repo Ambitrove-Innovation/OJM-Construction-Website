@@ -25,8 +25,8 @@ export default function About() {
               loading="lazy"
             />
           </div>
-          <div className="absolute -bottom-6 rotate-3 -right-6 bg-brand-gold text-black border border-black p-8 rounded-3xl shadow-xl max-w-[240px]">
-            <p className="text-sm font-medium text-black/80 italic">
+          <div className="absolute -bottom-6 sm:-bottom-8 right-4 sm:-right-6 rotate-3 bg-brand-gold text-black border border-black p-5 sm:p-8 rounded-3xl shadow-xl w-[85%] max-w-[220px] sm:max-w-[240px] z-10">
+            <p className="text-sm font-medium text-black/80 italic leading-relaxed">
               "We don't just build structures; we build lasting relationships
               through quality and trust."
             </p>

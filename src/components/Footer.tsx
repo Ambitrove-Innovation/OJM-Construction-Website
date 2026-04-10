@@ -58,11 +58,11 @@ export default function Footer() {
               <p>08:00 AM - 05:00 PM</p>
             </div>
           </div>
-          <div className="pt-4">
+          <div className="pt-4 flex flex-col gap-5">
             <button
               onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               aria-label="Scroll back to top"
-              className="flex items-center gap-2 text-white hover:text-brand-gold transition-colors focus:outline-none focus:ring-2 focus:ring-brand-gold rounded-lg px-2 py-1">
+              className="flex items-center gap-2 text-white hover:text-brand-gold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-gold rounded-lg px-2 py-1 w-max">
               Back to top <ArrowUpRight className="w-4 h-4" />
             </button>
           </div>
