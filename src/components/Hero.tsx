@@ -74,7 +74,7 @@ export default function Hero() {
                     ))}
                   </div>
                   <span className="text-sm font-medium">
-                    <Counter value={500} suffix="+" duration={2.5} /> Happy
+                    <Counter value={100} suffix="+" duration={2.5} /> Happy
                     Clients
                   </span>
                 </div>
@@ -94,7 +94,7 @@ export default function Hero() {
                   alt="Construction Work"
                   width="600"
                   height="800"
-                  className="rounded-[30px] w-full h-[500px] object-cover"
+                  className="rounded-[30px] w-full h-125 object-cover"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -107,9 +107,9 @@ export default function Hero() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -bottom-6 -left-6 bg-white/30 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-xl max-w-[220px]">
+                className="absolute -bottom-6 -left-6 bg-white/30 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-xl max-w-55">
                 <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-yellow-400 mb-1 leading-none">
-                  <Counter value={15} suffix="+" />
+                  <Counter value={20} suffix="+" />
                 </div>
                 <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white">
                   Years of Excellence

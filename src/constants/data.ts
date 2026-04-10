@@ -158,7 +158,7 @@ export const FAQS: Faq[] = [
   {
     question: "What areas do you serve?",
     answer:
-      "We primarily serve the greater Johannesburg area, including Sandton, Randburg, Midrand, and surrounding suburbs. For large-scale projects, we may consider locations further afield.",
+      "We primarily serve the greater Johannesburg area, including Sandton, Randburg, Midrand, Jhb south and surrounding suburbs. For large-scale projects, we may consider locations further afield.",
   },
   {
     question: "Do you provide free quotes?",
