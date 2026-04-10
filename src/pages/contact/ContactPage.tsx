@@ -1,7 +1,7 @@
 import { motion } from 'motion/react';
 import { Phone, Mail, MapPin, Clock, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { useState, FormEvent, ChangeEvent } from 'react';
-import { sendClientEmail } from '../../lib/resend-service';
+import { sendClientEmail } from '../../lib/formbold';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
