@@ -1,10 +1,11 @@
 import { motion } from 'motion/react';
 import { Phone, Mail, MapPin, Clock, AlertCircle, CheckCircle2 } from 'lucide-react';
 import { useState, FormEvent, ChangeEvent } from 'react';
+import { sendClientEmail } from '../../lib/resend-service';
 
 export default function ContactPage() {
   const [formData, setFormData] = useState({
-    fullName: '',
+    name: '',
     email: '',
     service: 'General Construction',
     message: ''
@@ -16,7 +17,7 @@ export default function ContactPage() {
   const validateForm = () => {
     const newErrors: Record<string, string> = {};
     
-    if (!formData.fullName.trim()) {
+    if (!formData.name.trim()) {
       newErrors.fullName = 'Full Name is required';
     }
     
@@ -34,13 +35,27 @@ export default function ContactPage() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
+
     e.preventDefault();
+    
     if (validateForm()) {
       // Simulate form submission
-      setIsSubmitted(true);
-      setFormData({ fullName: '', email: '', service: 'General Construction', message: '' });
-      setTimeout(() => setIsSubmitted(false), 5000);
+
+      try {
+
+        await sendClientEmail(formData);
+
+        setIsSubmitted(true);
+        setFormData({ name: '', email: '', service: 'General Construction', message: '' });
+        setTimeout(() => setIsSubmitted(false), 5000);
+
+      } catch (error) {
+
+        alert("Error occured trying to submit form. Please try again");
+
+      }
+      
     }
   };
 
@@ -142,12 +157,12 @@ export default function ContactPage() {
             <form className="space-y-6" onSubmit={handleSubmit} noValidate>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label htmlFor="fullName" className="text-sm font-bold uppercase tracking-widest text-black/40">Full Name</label>
+                  <label htmlFor="name" className="text-sm font-bold uppercase tracking-widest text-black/40">Full Name</label>
                   <input 
-                    id="fullName"
+                    id="name"
                     type="text" 
-                    name="fullName"
-                    value={formData.fullName}
+                    name="name"
+                    value={formData.name}
                     onChange={handleChange}
                     className={`w-full bg-white border ${errors.fullName ? 'border-red-500' : 'border-black/10'} rounded-2xl px-6 py-4 focus:outline-none focus:border-brand-gold transition-colors`} 
                     placeholder="John Doe" 
