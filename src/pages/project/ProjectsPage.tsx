@@ -1,5 +1,5 @@
-import Projects from '../components/Projects';
-import CTA from '../components/CTA';
+import Projects from '../../components/Projects';
+import CTA from '../../components/CTA';
 
 export default function ProjectsPage() {
   return (

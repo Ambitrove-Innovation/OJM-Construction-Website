@@ -1,5 +1,5 @@
-import About from '../components/About';
-import CTA from '../components/CTA';
+import About from '../../components/About';
+import CTA from '../../components/CTA';
 
 export default function AboutPage() {
   return (

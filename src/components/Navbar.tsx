@@ -2,6 +2,7 @@ import { motion } from 'motion/react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
+import { NAV_LINKS } from '../constants/data';
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -16,12 +17,6 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navLinks = [
-    { name: 'Home', path: '/' },
-    { name: 'About', path: '/about' },
-    { name: 'Services', path: '/services' },
-    { name: 'Projects', path: '/projects' },
-  ];
 
   return (
     <nav className={`fixed mb-5 top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? 'py-4' : 'py-6'}`}>
@@ -31,21 +26,21 @@ export default function Navbar() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <Link to="/" className="font-bold text-xl tracking-tighter flex items-center gap-2">
+            <Link to="/" className="font-semibold text-xl flex items-center gap-2">
               <span className="bg-black text-white px-2 py-0.5 rounded">OJM</span>
               <span className="hidden sm:inline">CONSTRUCTION</span>
             </Link>
           </motion.div>
 
           <div className="hidden md:flex gap-8 text-sm font-medium">
-            {navLinks.map((link) => (
+            {NAV_LINKS.map((link) => (
               <Link 
-                key={link.path} 
-                to={link.path} 
-                className={`relative transition-colors hover:text-brand-gold group ${location.pathname === link.path ? 'text-brand-gold' : 'text-black/70'}`}
+                key={link.url} 
+                to={link.url} 
+                className={`relative transition-colors hover:text-brand-gold group ${location.pathname === link.url ? 'text-brand-gold' : 'text-black/70'}`}
               >
                 {link.name}
-                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-full ${location.pathname === link.path ? 'w-full' : ''}`} />
+                <span className={`absolute -bottom-1 left-0 w-0 h-0.5 bg-brand-gold transition-all duration-300 group-hover:w-full ${location.pathname === link.url ? 'w-full' : ''}`} />
               </Link>
             ))}
           </div>
@@ -67,6 +62,8 @@ export default function Navbar() {
             <button 
               className="md:hidden p-2"
               onClick={() => setIsMenuOpen(!isMenuOpen)}
+              aria-expanded={isMenuOpen}
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
             >
               {isMenuOpen ? <X /> : <Menu />}
             </button>
@@ -81,12 +78,12 @@ export default function Navbar() {
           animate={{ opacity: 1, y: 0 }}
           className="md:hidden absolute top-full left-6 right-6 mt-2 glass rounded-3xl p-6 flex flex-col gap-4 shadow-xl"
         >
-          {navLinks.map((link) => (
+          {NAV_LINKS.map((link) => (
             <Link 
-              key={link.path} 
-              to={link.path} 
+              key={link.url} 
+              to={link.url} 
               onClick={() => setIsMenuOpen(false)}
-              className={`text-lg font-medium ${location.pathname === link.path ? 'text-brand-gold' : 'text-black/70'}`}
+              className={`text-lg font-medium ${location.pathname === link.url ? 'text-brand-gold' : 'text-black/70'}`}
             >
               {link.name}
             </Link>

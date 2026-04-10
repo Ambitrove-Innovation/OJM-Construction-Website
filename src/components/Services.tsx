@@ -1,29 +1,5 @@
 import { motion } from 'motion/react';
-import { Hammer, Droplets, Paintbrush } from 'lucide-react';
-
-const services = [
-  {
-    title: "Construction",
-    description: "Building, renovations, plastering, demolition, and more.",
-    icon: Hammer,
-    image: "/images/Construction_heavy_building_ojm.webp",
-    details: ["Demolition", "Building & Painting", "Plastering", "Paving & Pools"]
-  },
-  {
-    title: "Plumbing",
-    description: "Leaks, pipes, installations, and comprehensive plumbing solutions.",
-    icon: Droplets,
-    image: "/images/floorFoundation_building.jpg",
-    details: ["Pipe Repairs", "New Installations", "Leak Detection", "Maintenance"]
-  },
-  {
-    title: "Finishing",
-    description: "Tiling, ceilings, waterproofing, and high-end interior work.",
-    icon: Paintbrush,
-    image: "/images/Stair_tilling_ojm.webp",
-    details: ["Tiling & Ceiling", "Rhinolite", "Drywall", "Waterproofing"]
-  }
-];
+import { SERVICES } from '../constants/data';
 
 export default function Services() {
   return (
@@ -38,18 +14,18 @@ export default function Services() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl md:text-6xl font-bold tracking-tighter"
+            className="text-5xl md:text-6xl"
           >
             OUR <span className="text-brand-gold">SERVICES</span>
           </motion.h2>
         </div>
-        <p className="text-black/60 max-w-md text-lg">
+        <p className="text-black/70 max-w-md text-lg">
           We provide end-to-end construction solutions with a focus on quality, durability, and client satisfaction.
         </p>
       </div>
 
       <div className="grid md:grid-cols-3 gap-8">
-        {services.map((service, index) => (
+        {SERVICES.map((service, index) => (
           <motion.div 
             key={service.title}
             initial={{ opacity: 0, y: 20 }}
@@ -61,11 +37,14 @@ export default function Services() {
             {/* Background Image */}
             <img 
               src={service.image} 
-              alt={service.title} 
+              alt={`${service.title} services by OJM Project Construction`} 
+              width="400"
+              height="500"
               className="absolute inset-0 w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
               referrerPolicy="no-referrer"
+              loading="lazy"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent" />
+            <div className="absolute inset-0 bg-linear-to-t from-black/90 via-black/20 to-transparent" />
 
             {/* Content */}
             <div className="absolute inset-0 p-8 flex flex-col justify-end">
@@ -73,7 +52,7 @@ export default function Services() {
                 <service.icon className="w-7 h-7" />
               </div>
               
-              <h3 className="text-3xl font-bold text-white mb-3 tracking-tight">{service.title}</h3>
+              <h3 className="text-3xl text-white mb-3">{service.title}</h3>
               <p className="text-white/70 mb-6 text-sm leading-relaxed">{service.description}</p>
               
               <div className="h-0 group-hover:h-auto overflow-hidden transition-all duration-500">
