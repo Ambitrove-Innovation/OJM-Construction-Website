@@ -9,7 +9,7 @@ export default function Reviews() {
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-5xl font-light mb-12">
+        className="text-5xl font-display mb-12">
         What Clients Say
       </motion.h2>
 

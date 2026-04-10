@@ -32,7 +32,7 @@ export default function Navbar() {
             </Link>
           </motion.div>
 
-          <div className="hidden md:flex gap-8 text-sm font-medium">
+          <div className="hidden md:flex gap-8 text-sm font-bold">
             {NAV_LINKS.map((link) => (
               <Link 
                 key={link.url} 

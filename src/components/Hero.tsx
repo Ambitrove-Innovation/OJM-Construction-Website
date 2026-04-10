@@ -8,12 +8,10 @@ export default function Hero() {
   return (
     <section className="relative pb-10 min-h-screen flex items-center pt-20 overflow-hidden">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0 rounded-md ">
+      <div className="absolute inset-0 z-0 rounded-md">
         <img
           src="/images/mordenHouse_construction_ojm.webp"
-          alt="Modern residential construction project in Johannesburg by OJM Project Construction"
-          width="1920"
-          height="1080"
+          alt="Modern House Construction"
           className="w-full h-full object-cover"
           referrerPolicy="no-referrer"
         />
@@ -22,20 +20,21 @@ export default function Hero() {
 
       <div className="max-w-7xl mx-auto px-6 md:px-10 relative z-10 w-full">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
+          {/* Left: Content */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
             className="flex justify-center lg:justify-start">
             <div className="glass mt-7 p-6 md:p-12 rounded-[40px] max-w-2xl w-full text-center lg:text-left">
-              <div className="inline-block px-4 py-1.5 bg-yellow-400 text-white text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-full mb-6">
+              <div className="inline-block px-4 py-1.5 bg-brand-gold text-black text-[10px] md:text-xs font-bold tracking-widest uppercase rounded-full mb-6">
                 <TypingText
                   text="Professional Construction Services"
                   delay={0.8}
                 />
               </div>
 
-              <h1 className="text-[clamp(2.25rem,3.5vw,3.75rem)] leading-[1.05] text-black mb-6 wrap-break-words">
+              <h1 className="text-[clamp(2.25rem,3.5vw,3.75rem)] leading-[1.05] text-white tracking-tighter mb-6 wrap-break-word">
                 <BlurReveal text="QUALITY" delay={0.2} />
                 <br />
                 <BlurReveal text="CONSTRUCTION" delay={0.4} />
@@ -45,7 +44,7 @@ export default function Hero() {
                 </span>
               </h1>
 
-              <p className="text-base md:text-lg text-black/70 mb-8 max-w-md mx-auto lg:mx-0">
+              <p className="text-base md:text-lg text-white/80 mb-8 max-w-md mx-auto lg:mx-0">
                 Reliable building, plumbing & finishing services across
                 Johannesburg. We build trust, not just structures.
               </p>
@@ -66,14 +65,12 @@ export default function Hero() {
                         <img
                           src={`https://picsum.photos/seed/${i}/100/100`}
                           alt="Client"
-                          width="100"
-                          height="100"
                           referrerPolicy="no-referrer"
                         />
                       </div>
                     ))}
                   </div>
-                  <span className="text-sm font-medium">
+                  <span className="text-sm font-medium text-white/80">
                     <Counter value={100} suffix="+" duration={2.5} /> Happy
                     Clients
                   </span>
@@ -82,19 +79,18 @@ export default function Hero() {
             </div>
           </motion.div>
 
+          {/* Right: Image, always visible, responsive */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.2 }}
-            className="hidden lg:block">
+            className="block mt-12 lg:mt-0">
             <div className="relative">
               <div className="glass p-4 rounded-[40px] rotate-3 hover:rotate-0 transition-transform duration-500">
                 <img
                   src="/images/Construction_heavy_building_ojm.webp"
                   alt="Construction Work"
-                  width="600"
-                  height="800"
-                  className="rounded-[30px] w-full h-125 object-cover"
+                  className="rounded-[30px] w-full h-87.5 sm:h-100 md:h-125 lg:h-125 object-cover"
                   referrerPolicy="no-referrer"
                 />
               </div>
@@ -107,9 +103,10 @@ export default function Hero() {
                   repeat: Infinity,
                   ease: "easeInOut",
                 }}
-                className="absolute -bottom-6 -left-6 bg-white/30 backdrop-blur-md border border-white/20 p-6 rounded-3xl shadow-xl max-w-55">
-                <div className="text-[clamp(1.5rem,4vw,2.5rem)] font-bold text-yellow-400 mb-1 leading-none">
-                  <Counter value={20} suffix="+" />
+                className="absolute -bottom-6 left-4 md:-left-6 glass p-6 rounded-3xl shadow-xl max-w-55">
+                <div className="text-[clamp(1.5rem,4vw,2.5rem)] rotate-3 font-bold text-brand-gold mb-1 leading-none ">
+                  {"+"}
+                  <Counter value={20} suffix="" />
                 </div>
                 <div className="text-[10px] md:text-xs font-bold uppercase tracking-widest text-white">
                   Years of Excellence

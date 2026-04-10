@@ -19,7 +19,7 @@ export default function Projects() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-5xl font-light mb-4"
+            className="text-5xl font-display mb-4"
           >
             Our Projects
           </motion.h2>
@@ -48,7 +48,7 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 min-h-[400px]">
+      <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 min-h-100">
         <AnimatePresence mode="popLayout">
           {filteredProjects.map((image, _index) => (
             <motion.div 

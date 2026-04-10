@@ -13,7 +13,7 @@ export default function CTA() {
           We're One Call <span className="italic text-brand-gold">Away.</span>
         </motion.h2>
         <p className="text-black/60 mb-12 max-w-2xl mx-auto text-lg md:text-xl">
-          Need reliable construction or plumbing services? We’re ready to help —
+          Need reliable construction or plumbing services? We’re ready to help
           quickly and professionally. Get your free quote today.
         </p>
 
