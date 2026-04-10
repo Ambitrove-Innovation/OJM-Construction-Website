@@ -65,7 +65,7 @@ export default function ContactPage() {
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
           >
-            <h1 className="text-6xl font-bold tracking-tighter mb-8">GET IN <span className="text-brand-gold">TOUCH</span></h1>
+            <h1 className="text-6xl mb-8">GET IN <span className="text-brand-gold">TOUCH</span></h1>
             <p className="text-xl text-black/60 mb-12">
               Have a project in mind? We'd love to hear from you. Our team is ready to provide you with a professional quote and expert advice.
             </p>
@@ -76,7 +76,7 @@ export default function ContactPage() {
                   <Phone className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Call Us</h3>
+                  <h3 className="text-lg mb-1">Call Us</h3>
                   <p className="text-black/60">Primary: 084 993 8886</p>
                   <p className="text-black/60">Alt: +27 619 567 714</p>
                 </div>
@@ -87,7 +87,7 @@ export default function ContactPage() {
                   <Mail className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Email Us</h3>
+                  <h3 className="text-lg mb-1">Email Us</h3>
                   <p className="text-black/60">olivermoyo101@gmail.com</p>
                 </div>
               </div>
@@ -97,7 +97,7 @@ export default function ContactPage() {
                   <MapPin className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Location</h3>
+                  <h3 className="text-lg mb-1">Location</h3>
                   <p className="text-black/60">Johannesburg, South Africa</p>
                 </div>
               </div>
@@ -107,7 +107,7 @@ export default function ContactPage() {
                   <Clock className="w-6 h-6" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-lg mb-1">Business Hours</h3>
+                  <h3 className="text-lg mb-1">Business Hours</h3>
                   <p className="text-black/60">Mon - Sun: 08:00 AM - 05:00 PM</p>
                 </div>
               </div>
@@ -128,7 +128,7 @@ export default function ContactPage() {
                 <div className="w-20 h-20 bg-green-100 text-green-600 rounded-full flex items-center justify-center mb-6">
                   <CheckCircle2 className="w-10 h-10" />
                 </div>
-                <h3 className="text-3xl font-bold mb-2">Message Sent!</h3>
+                <h3 className="text-3xl mb-2">Message Sent!</h3>
                 <p className="text-black/60">Thank you for reaching out. We'll get back to you as soon as possible.</p>
                 <button 
                   onClick={() => setIsSubmitted(false)}
@@ -142,8 +142,9 @@ export default function ContactPage() {
             <form className="space-y-6" onSubmit={handleSubmit} noValidate>
               <div className="grid md:grid-cols-2 gap-6">
                 <div className="space-y-2">
-                  <label className="text-sm font-bold uppercase tracking-widest text-black/40">Full Name</label>
+                  <label htmlFor="fullName" className="text-sm font-bold uppercase tracking-widest text-black/40">Full Name</label>
                   <input 
+                    id="fullName"
                     type="text" 
                     name="fullName"
                     value={formData.fullName}
@@ -158,8 +159,9 @@ export default function ContactPage() {
                   )}
                 </div>
                 <div className="space-y-2">
-                  <label className="text-sm font-bold uppercase tracking-widest text-black/40">Email Address</label>
+                  <label htmlFor="email" className="text-sm font-bold uppercase tracking-widest text-black/40">Email Address</label>
                   <input 
+                    id="email"
                     type="email" 
                     name="email"
                     value={formData.email}
@@ -176,8 +178,9 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest text-black/40">Service Needed</label>
+                <label htmlFor="service" className="text-sm font-bold uppercase tracking-widest text-black/40">Service Needed</label>
                 <select 
+                  id="service"
                   name="service"
                   value={formData.service}
                   onChange={handleChange}
@@ -191,8 +194,9 @@ export default function ContactPage() {
               </div>
 
               <div className="space-y-2">
-                <label className="text-sm font-bold uppercase tracking-widest text-black/40">Message</label>
+                <label htmlFor="message" className="text-sm font-bold uppercase tracking-widest text-black/40">Message</label>
                 <textarea 
+                  id="message"
                   name="message"
                   value={formData.message}
                   onChange={handleChange}

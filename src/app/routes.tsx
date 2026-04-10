@@ -1,14 +1,14 @@
 
 import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import { useEffect } from 'react';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import WhatsAppFloat from './components/WhatsAppFloat';
-import Home from './pages/Home';
-import AboutPage from './pages/AboutPage';
-import ServicesPage from './pages/ServicesPage';
-import ProjectsPage from './pages/ProjectsPage';
-import ContactPage from './pages/ContactPage';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
+import WhatsAppFloat from '../components/WhatsAppFloat';
+import Home from '../pages/home/Home';
+import AboutPage from '../pages/about/AboutPage';
+import ServicesPage from '../pages/services/ServicesPage';
+import ProjectsPage from '../pages/project/ProjectsPage';
+import ContactPage from '../pages/contact/ContactPage';
 
 function ScrollToTop() {
   const { pathname } = useLocation();

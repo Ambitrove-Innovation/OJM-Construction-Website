@@ -35,7 +35,7 @@ export default function Counter({
   }, [isInView, value, duration, count, delay]);
 
   return (
-    <span ref={ref} className={className}>
+    <span ref={ref} className={className} aria-live="polite">
       {prefix}
       <motion.span>{rounded}</motion.span>
       {suffix}
