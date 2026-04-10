@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import WhatsAppFloat from '../components/WhatsAppFloat';
+import AccessibilityWidget from '../components/AccessibilityWidget';
 import Home from '../pages/home/Home';
 import AboutPage from '../pages/about/AboutPage';
 import ServicesPage from '../pages/services/ServicesPage';
@@ -37,6 +38,7 @@ export const Routespath = () => {
         </main>
         <Footer />
         <WhatsAppFloat />
+        <AccessibilityWidget />
       </div>
     </Router>
   );

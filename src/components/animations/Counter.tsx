@@ -22,15 +22,18 @@ export default function Counter({
   const count = useMotionValue(0);
   const rounded = useTransform(count, (latest) => Math.round(latest));
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "0px" });
 
   useEffect(() => {
+    let controls: any;
     if (isInView) {
       const timeout = setTimeout(() => {
-        const controls = animate(count, value, { duration });
-        return controls.stop;
+        controls = animate(count, value, { duration });
       }, delay * 1000);
-      return () => clearTimeout(timeout);
+      return () => {
+        clearTimeout(timeout);
+        if (controls) controls.stop();
+      };
     }
   }, [isInView, value, duration, count, delay]);
 
