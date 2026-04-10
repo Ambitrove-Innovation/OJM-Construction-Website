@@ -4,7 +4,7 @@ import { REVIEWS } from "../constants/data";
 
 export default function Reviews() {
   return (
-    <section className="max-w-[1200px] mx-auto px-6 py-20">
+    <section className="max-w-300 mx-auto px-6 py-20">
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
