@@ -14,18 +14,18 @@ export default function About() {
           whileInView={{ opacity: 1, x: 0 }}
           viewport={{ once: true }}
           className="relative">
-          <div className="glass p-4 rounded-[40px]">
+          <div className=" border border-black p-2 rounded-[40px]">
             <img
               src="/images/inside_house_construction_ojm.webp"
               alt="Quality interior construction work by OJM Project Construction"
               width="600"
               height="800"
-              className="rounded-[30px] w-full h-[600px] object-cover"
+              className="rounded-[30px] w-full h-150 object-cover"
               referrerPolicy="no-referrer"
               loading="lazy"
             />
           </div>
-          <div className="absolute -bottom-6 sm:-bottom-8 right-4 sm:-right-6 rotate-3 bg-brand-gold text-black border border-black p-5 sm:p-8 rounded-3xl shadow-xl w-[85%] max-w-[220px] sm:max-w-[240px] z-10">
+          <div className="absolute -bottom-6 sm:-bottom-8 right-4 sm:-right-6 rotate-3 bg-brand-gold text-black border border-black p-5 sm:p-8 rounded-3xl shadow-xl w-[85%] max-w-55 sm:max-w-60 z-10">
             <p className="text-sm font-medium text-black/80 italic leading-relaxed">
               "We don't just build structures; we build lasting relationships
               through quality and trust."

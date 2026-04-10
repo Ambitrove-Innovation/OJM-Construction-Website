@@ -26,7 +26,7 @@ export default function AccessibilityWidget() {
         }
         role="switch"
         aria-checked={animationsEnabled}
-        className={`w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-gold ${animationsEnabled ? "bg-black text-green-500 hover:bg-black" : "bg-neutral-200 text-red-500 hover:bg-neutral-300 border border-black"}`}>
+        className={`w-12 h-12 rounded-full shadow-2xl flex items-center justify-center transition-colors focus:outline-none focus-visible:ring-4 focus-visible:ring-brand-gold ${animationsEnabled ? "bg-black text-white hover:bg-black" : "bg-neutral-200 text-red-500 hover:bg-neutral-300 border border-black"}`}>
         <Accessibility className="w-4 h-4" />
       </button>
     </motion.div>
